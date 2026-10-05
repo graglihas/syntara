@@ -476,6 +476,8 @@ services:
       - ./backend/.secrets/certs/ca.pem:/run/secrets/s2s-ca.pem:ro,z
       - ./backend/.secrets/certs/worker.crt:/run/secrets/s2s-cert.crt:ro,z
       - ./backend/.secrets/certs/worker.key:/run/secrets/s2s-cert.key:ro,z
+      # Aiven Kafka project CA (verifies the managed broker's server cert).
+      - ./backend/.secrets/certs/aiven-ca.pem:/run/secrets/aiven-ca.pem:ro,z
     depends_on:
       database:
         condition: service_healthy

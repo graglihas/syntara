@@ -1945,7 +1945,7 @@ class EventStreamSettings(BaseSettings):
     """
 
     eventstream_enabled: bool = Field(
-        default=False,
+        default=True,
         description="Enable the event-stream consumer worker.",
     )
 
